@@ -5,7 +5,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
-import Ticket from "./ticket"
+import TicketPanel from "./ticket-panel"
 
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
     <div className={styles.page}>
       <main className={styles.main}>
 
-      <Ticket/>
+      <TicketPanel/>
       </main>
     </div>
   );
