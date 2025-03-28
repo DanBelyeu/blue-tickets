@@ -24,9 +24,9 @@ const updateBackend = (name, count) => {
     })
 };
 
-const getCount = (name) => {
+const getCount = async (name) => {
     const url = `http://localhost:3001/ticketCount/${name}`;
-    return fetch(url)
+    return await fetch(url)
     .then(response =>{
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
