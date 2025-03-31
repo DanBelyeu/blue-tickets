@@ -10,7 +10,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import { Add } from '@mui/icons-material';
 
 const updateBackend = (name, isIncrement) => {
-    return fetch('http://localhost:3001/update', {
+    return fetch('http://blue-tickets-backend.charlie51.com/update', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ const updateBackend = (name, isIncrement) => {
 };
 
 const getCount = async (name) => {
-    const url = `http://localhost:3001/ticketCount/${name}`;
+    const url = `http://blue-tickets-backend.charlie51.com/ticketCount/${name}`;
     return await fetch(url)
     .then(response =>{
         if (!response.ok) {

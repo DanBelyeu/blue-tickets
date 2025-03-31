@@ -5,7 +5,7 @@ import PrizeCard from './prize-card';
 import Grid from '@mui/material/Grid2';
 
 const getItems = async () => {
-    const url = `http://localhost:3001/getItems`;
+    const url = `http://blue-tickets-backend.charlie51.com/getItems`;
     return await fetch(url)
     .then(response =>{
         if (!response.ok) {
