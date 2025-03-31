@@ -32,7 +32,7 @@ function PrizePanel(props) {
     return (
         <Grid container spacing={2}>
         {items.map((item) => (
-          <PrizeCard item={item}/>
+          <PrizeCard key={item.id} item={item}/>
         ))}
       </Grid>
     );

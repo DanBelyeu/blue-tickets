@@ -44,7 +44,7 @@ function TicketCard(props) {
 
     useEffect(() => {
         setCount(getCount(name))
-    }, []);
+    }, [name]);
 
     const handleClick = () => {
         setCount(updateBackend(name, true));

@@ -47,7 +47,7 @@ function TicketController(props) {
 
     useEffect(() => {
         setCount(getCount(name))
-    }, []);
+    }, [name]);
 
     const handleClick = (isIncrement) => {
         setCount(updateBackend(name, isIncrement));
