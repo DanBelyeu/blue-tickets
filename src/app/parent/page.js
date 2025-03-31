@@ -4,13 +4,15 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
-import TicketPanel from "../../components/ticket-panel"
+import TicketControllerPanel from "./ticket-controller-panel";
+import AddItem from "./add-item";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-      <TicketPanel/>
+         <TicketControllerPanel/>
+         <AddItem/>
       </main>
     </div>
   );
