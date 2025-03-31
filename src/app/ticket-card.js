@@ -9,7 +9,7 @@ import LocalActivityOutlinedIcon from '@mui/icons-material/LocalActivityOutlined
 import { Stack, Typography } from '@mui/material';
 
 const updateBackend = (name, isIncrement) => {
-    return fetch('http://blue-tickets-backend.charlie51.com/update', {
+    return fetch('https://blue-tickets-backend.charlie51.com/update', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ const updateBackend = (name, isIncrement) => {
 };
 
 const getCount = async (name) => {
-    const url = `http://blue-tickets-backend.charlie51.com/ticketCount/${name}`;
+    const url = `https://blue-tickets-backend.charlie51.com/ticketCount/${name}`;
     return await fetch(url)
     .then(response =>{
         if (!response.ok) {

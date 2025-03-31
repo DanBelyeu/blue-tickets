@@ -18,7 +18,7 @@ function AddItem(props) {
         e.preventDefault(); // Prevents the default form submission behaviour
         // Process and send formData to the server or perform other actions
 
-        return fetch('http://localhost:3001/addItem', {
+        return fetch('https://localhost:3001/addItem', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
