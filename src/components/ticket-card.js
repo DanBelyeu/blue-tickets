@@ -39,7 +39,7 @@ const getCount = async (name) => {
 }
 
 function TicketCard(props) {
-    const { name } = props;
+    const { name, style } = props;
     const [count, setCount] = useState();
 
     useEffect(() => {
@@ -51,7 +51,7 @@ function TicketCard(props) {
     };
 
     return (
-        <Card>
+        <Card style={style}>
             <CardContent>
                 <h1 style={{ textAlign: 'center' }}>{count}</h1>
                 <Button variant="contained" size="large" onClick={handleClick}>{name}</Button>
