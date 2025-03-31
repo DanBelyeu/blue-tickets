@@ -6,8 +6,9 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid2';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
 import { CardMedia } from '@mui/material';
+import LocalActivityOutlinedIcon from '@mui/icons-material/LocalActivityOutlined';
+import { Stack, Typography } from '@mui/material';
 
 
 const PrizeCard = (props) => {
@@ -24,7 +25,10 @@ const PrizeCard = (props) => {
             <CardContent>
                 <Typography variant="h6">{item.name}</Typography>
                 <Typography variant="body2" color="text.secondary">{item.description}</Typography>
-                <Typography variant="body2" color="text.secondary">{item.cost} blue tickets</Typography>
+                <Stack direction="row" gap={0.5}>
+                    <Typography variant="span">{item.cost}</Typography>
+                    <LocalActivityOutlinedIcon/>
+                </Stack>
             </CardContent>
             </Card>
             </Paper>

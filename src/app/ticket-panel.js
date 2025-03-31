@@ -10,8 +10,7 @@ import Grid from '@mui/material/Grid2';
 function TicketPanel(props) {
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <Paper elevation={2}>
-                <Grid container spacing={2} justifyContent="center" alignItems="center">
+                <Grid container spacing={2}>
                     <Grid size={4}>
                         <TicketCard name="colton" style={{backgroundColor: "blue"}}/>
                     </Grid>
@@ -22,7 +21,6 @@ function TicketPanel(props) {
                         <TicketCard name="wesley" style={{backgroundColor: "green"}}/>
                     </Grid>
                 </Grid>
-            </Paper>
         </Box>
     );
 }

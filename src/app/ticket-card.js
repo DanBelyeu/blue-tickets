@@ -3,8 +3,10 @@
 import React, { useState, useEffect }  from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
-
+import LocalActivityOutlinedIcon from '@mui/icons-material/LocalActivityOutlined';
+import { Stack, Typography } from '@mui/material';
 
 const updateBackend = (name, isIncrement) => {
     return fetch('http://localhost:3001/update', {
@@ -53,9 +55,16 @@ function TicketCard(props) {
     return (
         <Card style={style}>
             <CardContent>
-                <h1 style={{ textAlign: 'center' }}>{count}</h1>
-                <Button variant="contained" size="large" onClick={handleClick}>{name}</Button>
+                <h1 style={{ textAlign: 'center' }}>{name.toUpperCase()}</h1>
+                <Stack alignItems="center" justifyContent="center" direction="row" gap={1}>
+                    <Typography variant="h4">{count}</Typography>
+                    <LocalActivityOutlinedIcon fontSize="large"/>
+                </Stack>
             </CardContent>
+            <CardActions style={{justifyContent: 'center'}}>
+                <Button variant="contained" size="large" onClick={handleClick}>Get a Ticket!</Button>
+            </CardActions>
+
         </Card>
     );
 }
