@@ -12,9 +12,7 @@ const sql = postgres({
  
 export async function updateChildSecondaryData(child) {
     const { id, ticket_count, prize } = child;
-
-    console.log(id, ticket_count, prize);
-    
+        
     try {
         await sql`update children set ticket_count = ${ticket_count}, prize = ${prize} where id = ${id}`;
     } catch (error) {

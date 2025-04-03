@@ -12,10 +12,10 @@ import { useRouter } from 'next/navigation';
 import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { unstable_noStore } from 'next/cache';
 
 export default function ChildCard({child, isParentView, style}) {
-    console.log(child, isParentView);
-    
+    unstable_noStore()    
     const router = useRouter();
 
     const updateTicketCount = async (updatedTicketCount) => {
