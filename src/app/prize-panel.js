@@ -3,19 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import PrizeCard from './prize-card';
 import Grid from '@mui/material/Grid2';
+import { fetchAllActiveItems } from './lib/data';
 
 const getItems = async () => {
-    const url = `http://blue-tickets-backend.charlie51.com/getItems`;
-    return await fetch(url)
-    .then(response =>{
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          return response.json();
-        })
-        .catch(error => {
-          console.error("There was an error:", error);
-        });   
+  const data = await fetchAllActiveItems();
+  return data;
 }
 
 function PrizePanel(props) {
