@@ -9,7 +9,7 @@ import CardContent from '@mui/material/CardContent';
 import { CardMedia } from '@mui/material';
 import LocalActivityOutlinedIcon from '@mui/icons-material/LocalActivityOutlined';
 import { Stack, Typography } from '@mui/material';
-
+import Image from 'next/image';
 
 const PrizeCard = (props) => {
     const { item } = props;
@@ -17,11 +17,15 @@ const PrizeCard = (props) => {
         <Grid item xs={12} sm={6} md={4} key={item.id}>
             <Paper>
             <Card>
-            <CardMedia
-                    sx={{ height: 140 }}
-                    image={item.image}
-                    title="green iguana"
-            />
+                <CardMedia>
+                <Image
+                    src={`/${item.image}`}
+                    width={150}
+                    height={150}
+                    className="hidden md:block"
+                />
+                </CardMedia>
+
             <CardContent>
                 <Typography variant="h6">{item.name}</Typography>
                 <Typography variant="body2" color="text.secondary">{item.description}</Typography>
