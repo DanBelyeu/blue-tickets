@@ -39,3 +39,13 @@ export async function fetchAllActiveItems() {
         throw new Error('Failed to fetch revenue data.');
     }
 }
+
+export async function addItem(formData) {
+    const {name, description, cost} = formData;    
+    try {
+        await sql`INSERT INTO items (name, description, cost, status) values (${name}, ${description}, ${cost}, true)`; 
+    } catch (error) {
+        console.error('Database Error:', error);
+        throw new Error('Faild to insert item.');
+    }
+}

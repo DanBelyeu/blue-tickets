@@ -27,23 +27,28 @@ export default function ChildCard({child, isParentView, style}) {
     return (
         <Card style={style}>
             <CardContent>
-                <h1 style={{ textAlign: 'center' }}>{child.name.toUpperCase()}</h1>
+                <h1 style={{ textAlign: 'center', fontSize: 100}}>{child.name.charAt(0).toUpperCase()}</h1>
                 <Stack alignItems="center" justifyContent="center" direction="row" gap={1}>
                     <Typography variant="h4">{child.ticket_count}</Typography>
                     <LocalActivityOutlinedIcon fontSize="large"/>
                 </Stack>
             </CardContent>
             <CardActions style={{justifyContent: 'center'}}>
-                {!isParentView && <Button variant="contained" size="large" onClick={() => updateTicketCount(child.ticket_count+1)}>Get a Ticket!</Button>}
+                <Stack spacing={2}>
+                {!isParentView && 
+                <Button variant="contained" size="large" endIcon={<LocalActivityOutlinedIcon />} onClick={() => updateTicketCount(child.ticket_count+1)}>Get</Button>}
                 {isParentView && 
-                <>
-                    <IconButton aria-label="decrement" onClick={() => updateTicketCount(child.ticket_count-1)}>
-                        <RemoveIcon />
-                    </IconButton>
-                    <IconButton aria-label="increment" onClick={() => updateTicketCount(child.ticket_count+1)}>
-                        <AddIcon />
-                    </IconButton>
-                </>            }
+                    <>
+                        <IconButton aria-label="decrement" onClick={() => updateTicketCount(child.ticket_count-1)}>
+                            <RemoveIcon />
+                        </IconButton>
+                        <IconButton aria-label="increment" onClick={() => updateTicketCount(child.ticket_count+1)}>
+                            <AddIcon />
+                        </IconButton>
+                    </>
+                }
+                </Stack>
+
             </CardActions>
         </Card>
     );
